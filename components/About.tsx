@@ -21,39 +21,40 @@ export default function About() {
             About
           </p>
 
-          <div className="max-w-2xl">
-            <p className="text-[18px] sm:text-[20px] font-medium text-navy leading-relaxed mb-6">
-              Tulane University sophomore studying Economics with a minor in Artificial Intelligence —
-              3.77 GPA, Dean&apos;s List, Alpha Lambda Delta and Omicron Delta Epsilon honor societies.
+          <div className="max-w-2xl space-y-4 text-[15px] text-navy/70 leading-relaxed">
+            <p className="text-[18px] sm:text-[19px] font-medium text-navy leading-relaxed">
+              Originally from Stroud, Gloucestershire — a small town in the English countryside.
+              Studied GCSEs and A Levels at Cheltenham College before taking a gap year that shaped
+              how I think about independence and risk.
             </p>
-
-            <div className="space-y-4 text-[15px] text-navy/65 leading-relaxed">
-              <p>
-                Spent a semester fundraising face-to-face on the streets of Sydney — became top
-                performer company-wide, then took that same competitive drive into SaaS sales and
-                university leadership back in New Orleans.
-              </p>
-              <p>
-                Drawn to financial markets, venture capital, and the role data plays in how capital
-                allocates. Incoming VC intern at Alumni Ventures in London, Summer 2026.
-              </p>
-              <p>
-                UK and US citizen. Currently building WaveRow, a student housing marketplace for
-                Tulane — taking a real market problem from idea to product.
-              </p>
-            </div>
+            <p>
+              Spent six weeks volunteering in Sri Lanka, then travelled Southeast Asia across
+              Thailand, Vietnam, and Indonesia. Moved to Australia where I worked in face-to-face
+              sales at Black Classic, and bartended at the SCG and Allianz Stadium — saving enough
+              to travel South America solo. Explored Mexico extensively, then Peru with a friend —
+              Machu Picchu, the Amazon rainforest. Living alone in Sydney, building a life from
+              scratch, taught me more about myself than anything else.
+            </p>
+            <p>
+              Brought that same drive back to New Orleans. Became top performer company-wide in
+              fundraising, then moved into SaaS sales and university leadership. Drawn to financial
+              markets, venture capital, and the role data plays in how capital allocates. Incoming
+              VC intern at Alumni Ventures in London, Summer 2026. UK and US citizen. Currently
+              building WaveRow, a student housing marketplace for Tulane — taking a real market
+              problem from idea to product.
+            </p>
           </div>
 
           {/* Stat row */}
           <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6">
             {[
               { value: '3.77', label: 'GPA' },
-              { value: 'Econ + AI', label: 'Double Track' },
+              { value: 'Economics with AI Minor', label: 'Degree' },
               { value: 'UK & US', label: 'Citizenship' },
               { value: '2028', label: 'Class of' },
             ].map((stat) => (
               <div key={stat.label} className="border-l-2 border-navy/10 pl-4">
-                <div className="text-[22px] font-bold text-navy">{stat.value}</div>
+                <div className="text-[18px] font-bold text-navy leading-tight">{stat.value}</div>
                 <div className="text-[12px] text-navy/50 font-medium mt-0.5">{stat.label}</div>
               </div>
             ))}

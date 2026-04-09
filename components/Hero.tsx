@@ -116,12 +116,12 @@ export default function Hero() {
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
             className="flex-shrink-0"
           >
-            <div className="w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] rounded-2xl overflow-hidden ring-1 ring-white/10">
+            <div className="w-[240px] h-[300px] sm:w-[300px] sm:h-[370px] rounded-2xl overflow-hidden ring-1 ring-white/10">
               <Image
                 src="/headshot.jpg"
                 alt="Joseph Raphael"
-                width={200}
-                height={200}
+                width={300}
+                height={370}
                 className="w-full h-full object-cover object-top"
                 priority
               />
