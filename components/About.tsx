@@ -23,25 +23,33 @@ export default function About() {
 
           <div className="max-w-2xl space-y-4 text-[15px] text-navy/70 leading-relaxed">
             <p className="text-[18px] sm:text-[19px] font-medium text-navy leading-relaxed">
-              Originally from Stroud, Gloucestershire — a small town in the English countryside.
-              Studied GCSEs and A Levels at Cheltenham College before taking a gap year that shaped
-              how I think about independence and risk.
+              Sophomore at Tulane University studying Economics with a minor in Artificial
+              Intelligence (GPA 3.77). Incoming VC intern at Alumni Ventures, London, Summer 2026.
+              Currently building WaveRow, a student housing marketplace for Tulane — identifying a
+              gap in the market and taking it through product development end to end.
             </p>
             <p>
-              Spent six weeks volunteering in Sri Lanka, then travelled Southeast Asia across
-              Thailand, Vietnam, and Indonesia. Moved to Australia where I worked in face-to-face
-              sales at Black Classic, and bartended at the SCG and Allianz Stadium — saving enough
-              to travel South America solo. Explored Mexico extensively, then Peru with a friend —
-              Machu Picchu, the Amazon rainforest. Living alone in Sydney, building a life from
-              scratch, taught me more about myself than anything else.
+              Finance is where I am headed. Specifically interested in capital markets, venture,
+              and the data infrastructure that sits behind investment decisions. Actively pursuing
+              internships and opportunities across wealth management, sales and trading, and private
+              investment — and welcome any conversation with people working in those spaces.
             </p>
             <p>
-              Brought that same drive back to New Orleans. Became top performer company-wide in
-              fundraising, then moved into SaaS sales and university leadership. Drawn to financial
-              markets, venture capital, and the role data plays in how capital allocates. Incoming
-              VC intern at Alumni Ventures in London, Summer 2026. UK and US citizen. Currently
-              building WaveRow, a student housing marketplace for Tulane — taking a real market
-              problem from idea to product.
+              Career so far has been built on performance. Top performer company-wide in
+              face-to-face fundraising. Moved into SaaS sales at a govtech startup. Taken on
+              academic leadership at Tulane. Each role has been chosen deliberately to build a
+              foundation of commercial judgment, resilience, and execution.
+            </p>
+            <p>
+              Background spans three continents. Grew up in Gloucestershire, England, studied at
+              Cheltenham College, then spent a gap year working independently across Australia,
+              Southeast Asia, and South America before bringing that same drive to New Orleans.
+              That experience built a global perspective and a genuine comfort with ambiguity and
+              high-stakes environments.
+            </p>
+            <p>
+              UK and US citizen. Dual perspective, international network, and a long-term
+              commitment to finance.
             </p>
           </div>
 

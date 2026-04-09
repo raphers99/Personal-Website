@@ -45,7 +45,7 @@ export default function Hero() {
             <motion.h1
               variants={fadeUp}
               custom={0.1}
-              className="text-[52px] sm:text-[60px] font-bold text-white leading-[1.05] tracking-tight mb-4"
+              className="font-display text-[52px] sm:text-[62px] font-bold text-white leading-[1.05] tracking-tight mb-4"
             >
               Joseph Raphael
             </motion.h1>
@@ -56,7 +56,7 @@ export default function Hero() {
               custom={0.2}
               className="text-[20px] sm:text-[22px] font-medium text-white/80 mb-3"
             >
-              Economics & AI @ Tulane
+              Economics & AI @ Tulane University
             </motion.p>
 
             {/* Subheadline */}
@@ -116,12 +116,12 @@ export default function Hero() {
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
             className="flex-shrink-0"
           >
-            <div className="w-[280px] h-[360px] sm:w-[400px] sm:h-[500px]">
+            <div className="w-[300px] h-[390px] sm:w-[460px] sm:h-[580px]">
               <Image
                 src="/headshot_nobg.png"
                 alt="Joseph Raphael"
-                width={400}
-                height={500}
+                width={460}
+                height={580}
                 className="w-full h-full object-contain object-bottom"
                 priority
               />
