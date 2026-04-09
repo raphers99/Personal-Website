@@ -13,20 +13,12 @@ export default function Footer() {
             Email
           </a>
           <a
-            href="https://linkedin.com/in/joseph-raphael"
+            href="https://www.linkedin.com/in/josephraphael04"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[12px] text-white/30 hover:text-white/60 transition-colors"
           >
             LinkedIn
-          </a>
-          <a
-            href="https://github.com/raphers99"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[12px] text-white/30 hover:text-white/60 transition-colors"
-          >
-            GitHub
           </a>
         </div>
       </div>

@@ -9,39 +9,47 @@ export interface ExperienceItem {
 
 export const experiences: ExperienceItem[] = [
   {
-    role: 'Account Executive Intern',
-    organization: 'CoverGov',
-    location: 'Remote',
-    period: 'Summer 2025',
-    description: 'B2G SaaS sales for government contracting intelligence platform.',
+    role: 'Venture Capital Intern',
+    organization: 'Alumni Ventures',
+    location: 'London, UK',
+    period: 'May – Jul 2026',
+    description: 'Incoming intern at one of the most active VC firms in the US, covering EMEA and US early- to growth-stage deals.',
     bullets: [
-      'Managed a pipeline of 60+ government contractor accounts using HubSpot CRM',
-      'Conducted discovery calls and product demos, contributing to new ARR in a competitive procurement software market',
-      'Developed cold outreach sequences that improved reply rates through targeted messaging to procurement officers',
+      'Selected for a competitive internship focused on deal sourcing, due diligence, and investment memo support',
+      'Coverage across defence, technology, and innovation sectors in EMEA and US markets',
     ],
   },
   {
-    role: 'Face-to-Face Fundraiser',
-    organization: 'Grassroots Campaign — Sydney, Australia',
-    location: 'Sydney, NSW',
-    period: 'Jan 2025 – May 2025',
-    description: 'Direct donor acquisition for international nonprofit campaigns in Sydney.',
-    bullets: [
-      'Averaged 3+ donor sign-ups per shift through high-volume cold outreach on the street',
-      'Adapted pitches in real time based on donor behavior and objection patterns',
-      'Operated independently in an international environment, developing strong interpersonal communication skills',
-    ],
-  },
-  {
-    role: 'Academic Support Tutor',
+    role: 'Data Peer Mentor Manager / Teaching Assistant',
     organization: 'Tulane University',
     location: 'New Orleans, LA',
-    period: 'Fall 2024 – Present',
-    description: 'Peer tutor for economics and quantitative coursework.',
+    period: 'Jan 2025 – Present',
+    description: 'Lead the university\'s Data Peer Mentor program and serve as TA for Data Analytics.',
     bullets: [
-      'Tutored undergraduates in Microeconomics, Macroeconomics, and introductory statistics',
-      'Developed structured review materials and problem sets to reinforce exam preparation',
-      'Maintained strong student outcomes with consistent session attendance and positive feedback',
+      'Oversee PhD TA hiring, training, scheduling, and performance; run biweekly meetings coordinating with faculty and 300+ student mentees',
+      'Guide 60+ students in data analytics through hands-on support, weekly office hours, grading, and research projects',
+    ],
+  },
+  {
+    role: 'Sales Officer',
+    organization: 'CoverGov',
+    location: 'New Orleans, LA',
+    period: 'Aug – Dec 2025',
+    description: 'B2G SaaS sales for a government contracting intelligence platform.',
+    bullets: [
+      'Drove sales by building relationships with political staffers, legislative aides, and government affairs professionals',
+      'Earned promotion to Sales Officer through demonstrated pitch delivery, product knowledge, and sales performance',
+    ],
+  },
+  {
+    role: 'Fundraiser',
+    organization: 'Black Classic Marketing Agency',
+    location: 'Sydney, Australia',
+    period: 'Feb – Jun 2024',
+    description: 'Face-to-face donor acquisition for the Heart Research Institute on the streets of Sydney.',
+    bullets: [
+      'Achieved top fundraiser company-wide for two consecutive weeks, recording 26 sales in a single week against a target of 10',
+      'Selected to travel to remote locations (Dubbo & Orange); earned performance-based bonuses and recognition',
     ],
   },
 ];

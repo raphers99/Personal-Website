@@ -6,11 +6,15 @@ export interface SkillGroup {
 export const skillGroups: SkillGroup[] = [
   {
     category: 'Technical',
-    skills: ['Python', 'TypeScript', 'Next.js', 'Supabase', 'SQL', 'Git'],
+    skills: ['Python', 'TypeScript', 'Next.js', 'Supabase', 'SQL', 'GitHub', 'Claude Code', 'Google Suite'],
   },
   {
-    category: 'Finance',
-    skills: ['Bloomberg Terminal', 'Excel', 'Financial Modeling', 'DCF Analysis'],
+    category: 'Finance & Productivity',
+    skills: ['Excel', 'PowerPoint', 'Financial Modeling', 'Bloomberg Terminal'],
+  },
+  {
+    category: 'Certifications',
+    skills: ['Microsoft Excel Associate 2019', 'Anthropic AI Fluency (2026)'],
   },
   {
     category: 'Coursework',
@@ -21,6 +25,7 @@ export const skillGroups: SkillGroup[] = [
       'Macroeconomics',
       'Statistics',
       'Artificial Intelligence',
+      'Data Analytics',
     ],
   },
 ];

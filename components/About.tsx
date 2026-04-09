@@ -23,22 +23,23 @@ export default function About() {
 
           <div className="max-w-2xl">
             <p className="text-[18px] sm:text-[20px] font-medium text-navy leading-relaxed mb-6">
-              Tulane University sophomore studying Economics with a minor in Artificial Intelligence,
-              maintaining a 3.77 GPA.
+              Tulane University sophomore studying Economics with a minor in Artificial Intelligence —
+              3.77 GPA, Dean&apos;s List, Alpha Lambda Delta and Omicron Delta Epsilon honor societies.
             </p>
 
             <div className="space-y-4 text-[15px] text-navy/65 leading-relaxed">
               <p>
-                Spent a semester fundraising face-to-face in Sydney, Australia — building the kind
-                of conviction and communication skills you can&apos;t get in a classroom.
+                Spent a semester fundraising face-to-face on the streets of Sydney — became top
+                performer company-wide, then took that same competitive drive into SaaS sales and
+                university leadership back in New Orleans.
               </p>
               <p>
-                Drawn to financial markets, trading behavior, and the role data plays in how capital
-                allocates. Comfortable in both spreadsheets and codebases.
+                Drawn to financial markets, venture capital, and the role data plays in how capital
+                allocates. Incoming VC intern at Alumni Ventures in London, Summer 2026.
               </p>
               <p>
-                Currently building WaveRow, a student housing marketplace for Tulane — taking a
-                real market problem from idea to product.
+                UK and US citizen. Currently building WaveRow, a student housing marketplace for
+                Tulane — taking a real market problem from idea to product.
               </p>
             </div>
           </div>
@@ -48,7 +49,7 @@ export default function About() {
             {[
               { value: '3.77', label: 'GPA' },
               { value: 'Econ + AI', label: 'Double Track' },
-              { value: 'Sydney', label: 'International' },
+              { value: 'UK & US', label: 'Citizenship' },
               { value: '2028', label: 'Class of' },
             ].map((stat) => (
               <div key={stat.label} className="border-l-2 border-navy/10 pl-4">
