@@ -5,10 +5,9 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 
 const photos: { src: string; caption: string }[] = [
-  // Add your Sri Lanka photos here — drop images into /public/srilanka/
-  // Example: { src: '/srilanka/photo1.jpg', caption: 'Teaching English in Ahangama' },
-  // Example: { src: '/srilanka/photo2.jpg', caption: 'Cricket coaching session' },
-  // Example: { src: '/srilanka/photo3.jpg', caption: 'Foundation of Goodness' },
+  { src: '/srilanka/IMG_8506.jpeg', caption: 'Teaching English in Ahangama' },
+  { src: '/srilanka/IMG_9783.jpeg', caption: 'With students at a village school' },
+  { src: '/srilanka/IMG_9822.jpeg', caption: 'Community group, Ahangama' },
 ];
 
 export default function Volunteer() {
