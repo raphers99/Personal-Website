@@ -25,7 +25,7 @@ export default function Splash() {
       style={{
         position: 'fixed',
         inset: 0,
-        backgroundColor: '#FAFAF8',
+        backgroundColor: '#0B1F3B',
         zIndex: 999999,
         display: 'flex',
         alignItems: 'center',
@@ -39,10 +39,10 @@ export default function Splash() {
         <h1
           className="handwritten-reveal-text"
           style={{
-            fontFamily: '"Dancing Script", "Great Vibes", cursive',
-            fontSize: 'min(72px, 16vw)',
+            fontFamily: '"Corinthia", cursive',
+            fontSize: 'min(96px, 20vw)',
             fontWeight: 400,
-            color: '#111111',
+            color: '#ffffff',
             margin: 0,
             position: 'relative',
             display: 'inline-block',
@@ -57,7 +57,7 @@ export default function Splash() {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Corinthia&display=swap');
 
         @property --reveal-percent {
           syntax: '<percentage>';
