@@ -26,18 +26,19 @@ const projects: Project[] = [
       'Roommate matching system with individual and group profiles',
       'Designed for mobile-first usage with native iOS support via Capacitor',
     ],
-    href: 'https://waverow.com',
+    href: 'https://waverow.app',
     featured: true,
   },
   {
-    title: 'Market Data Dashboard',
-    stack: ['Python', 'Pandas', 'Matplotlib'],
+    title: 'AI Smart Calendar',
+    stack: ['Next.js', 'TypeScript', 'OpenAI', 'Vercel'],
     description:
-      'Personal project pulling and visualizing equity and macro data for pattern analysis.',
+      'A personal AI-powered calendar app that schedules, reschedules, and prioritizes tasks automatically.',
     bullets: [
-      'Automated daily pulls from public market APIs',
-      'Visualized momentum signals and correlation matrices',
+      'Natural language event creation and smart rescheduling',
+      'AI-driven priority scoring and conflict resolution',
     ],
+    href: 'https://ai-smart-calendar-nine.vercel.app',
   },
 ];
 
@@ -65,19 +66,13 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.45, delay: i * 0.1, ease: 'easeOut' }}
-                className={`group relative bg-white border rounded-xl transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 ${
+                className={`group bg-white border rounded-xl transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 ${
                   project.featured
                     ? 'border-navy/15 p-7 sm:p-8'
                     : 'border-gray-100 p-6'
                 }`}
               >
-                {project.featured && (
-                  <span className="absolute top-6 right-6 text-[10px] font-semibold tracking-widest uppercase text-accent bg-accent/10 border border-accent/20 rounded-full px-2.5 py-1">
-                    Featured
-                  </span>
-                )}
-
-                <div className="mb-4">
+                <div className="flex items-start justify-between gap-4 mb-4">
                   <h3
                     className={`font-bold text-navy leading-tight ${
                       project.featured ? 'text-[22px]' : 'text-[17px]'
@@ -90,6 +85,11 @@ export default function Projects() {
                       </span>
                     )}
                   </h3>
+                  {project.featured && (
+                    <span className="flex-shrink-0 text-[10px] font-semibold tracking-widest uppercase text-accent bg-accent/10 border border-accent/20 rounded-full px-2.5 py-1">
+                      Featured
+                    </span>
+                  )}
                 </div>
 
                 <p
@@ -109,26 +109,31 @@ export default function Projects() {
                   ))}
                 </ul>
 
-                <div className="flex flex-wrap gap-2">
-                  {project.stack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-[11px] font-medium text-navy/50 bg-navy/5 border border-navy/10 rounded-md px-2.5 py-1"
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div className="flex flex-wrap gap-2">
+                    {project.stack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="text-[11px] font-medium text-navy/50 bg-navy/5 border border-navy/10 rounded-md px-2.5 py-1"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  {project.href && (
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-accent hover:text-accent-light transition-colors"
                     >
-                      {tech}
-                    </span>
-                  ))}
+                      Visit
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  )}
                 </div>
-
-                {project.href && (
-                  <a
-                    href={project.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="absolute inset-0 rounded-xl"
-                    aria-label={`View ${project.title}`}
-                  />
-                )}
               </motion.div>
             ))}
           </div>
