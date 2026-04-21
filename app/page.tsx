@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import Splash from '@/components/Splash';
 import About from '@/components/About';
 import Volunteer from '@/components/Volunteer';
 import Experience from '@/components/Experience';
@@ -11,6 +12,7 @@ import Footer from '@/components/Footer';
 export default function Home() {
   return (
     <>
+      <Splash />
       <Navbar />
       <main>
         <Hero />
