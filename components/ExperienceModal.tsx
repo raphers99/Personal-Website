@@ -15,9 +15,11 @@ interface ExperienceData {
 interface ExperienceModalProps {
   experience: ExperienceData | null;
   onClose: () => void;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
-export function ExperienceModal({ experience, onClose }: ExperienceModalProps) {
+export function ExperienceModal({ experience, onClose, onMouseEnter, onMouseLeave }: ExperienceModalProps) {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -45,7 +47,11 @@ export function ExperienceModal({ experience, onClose }: ExperienceModalProps) {
             onClick={(e) => e.stopPropagation()}
             className="fixed inset-0 flex items-center justify-center px-4 z-50"
           >
-            <div className="bg-navy rounded-lg p-8 max-w-lg w-full shadow-2xl max-h-[90vh] overflow-y-auto border border-white/10">
+            <div
+              className="bg-navy rounded-lg p-8 max-w-lg w-full shadow-2xl max-h-[90vh] overflow-y-auto border border-white/10"
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+            >
             <button
               onClick={onClose}
               className="absolute top-5 right-5 text-white/40 hover:text-white transition-colors"

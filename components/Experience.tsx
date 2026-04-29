@@ -10,6 +10,18 @@ export default function Experience() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
   const [selectedExperience, setSelectedExperience] = useState<typeof experiences[0] | null>(null);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleCardHover = (exp: typeof experiences[0]) => {
+    if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+    setSelectedExperience(exp);
+  };
+
+  const handleCardLeave = () => {
+    hoverTimeoutRef.current = setTimeout(() => {
+      setSelectedExperience(null);
+    }, 200);
+  };
 
   return (
     <section id="experience" className="py-24 px-6 bg-navy">
@@ -20,7 +32,17 @@ export default function Experience() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-          <ExperienceModal experience={selectedExperience} onClose={() => setSelectedExperience(null)} />
+          <ExperienceModal
+            experience={selectedExperience}
+            onClose={() => {
+              if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+              setSelectedExperience(null);
+            }}
+            onMouseEnter={() => {
+              if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+            }}
+            onMouseLeave={handleCardLeave}
+          />
           <p className="text-[11px] font-semibold tracking-widest uppercase text-emerald/70 mb-4">
             Experience
           </p>
@@ -35,9 +57,8 @@ export default function Experience() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.45, delay: i * 0.1, ease: 'easeOut' }}
-                onClick={() => setSelectedExperience(exp)}
-                onMouseEnter={() => setSelectedExperience(exp)}
-                onMouseLeave={() => setSelectedExperience(null)}
+                onMouseEnter={() => handleCardHover(exp)}
+                onMouseLeave={handleCardLeave}
                 className="w-full py-8 grid sm:grid-cols-[200px_1fr] gap-4 sm:gap-8 hover:bg-white/5 transition-colors duration-200 text-left group"
               >
                 {/* Left column */}
