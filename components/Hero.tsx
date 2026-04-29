@@ -65,7 +65,7 @@ export default function Hero() {
               custom={0.3}
               className="text-[15px] sm:text-[16px] text-white/50 mb-10 leading-relaxed"
             >
-              Building at the intersection of markets, data, and software
+              UK and US citizen. Finance focused.
             </motion.p>
 
             {/* CTA Buttons */}
