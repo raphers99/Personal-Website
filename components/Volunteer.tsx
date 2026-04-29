@@ -4,11 +4,6 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-const photos: { src: string; caption: string }[] = [
-  { src: '/srilanka/IMG_8506.jpeg', caption: 'Teaching English in Ahangama' },
-  { src: '/srilanka/IMG_9783.jpeg', caption: 'With students at a village school' },
-  { src: '/srilanka/IMG_9822.jpeg', caption: 'Community group, Ahangama' },
-];
 
 export default function Volunteer() {
   const ref = useRef(null);
@@ -62,32 +57,6 @@ export default function Volunteer() {
             </ul>
           </div>
 
-          {/* Photo grid — full width */}
-          {photos.length > 0 && (
-            <div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {photos.map((photo, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.97 }}
-                    animate={inView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ duration: 0.4, delay: 0.1 + i * 0.08 }}
-                    className="rounded-xl overflow-hidden bg-navy/5 aspect-[4/3]"
-                  >
-                    <img
-                      src={photo.src}
-                      alt={photo.caption}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </motion.div>
-                ))}
-              </div>
-              <p className="text-[11px] text-navy/35 mt-3 text-center">
-                Ahangama, Sri Lanka &mdash; Nov/Dec 2023
-              </p>
-            </div>
-          )}
         </motion.div>
       </div>
     </section>

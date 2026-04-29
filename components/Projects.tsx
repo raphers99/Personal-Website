@@ -29,17 +29,6 @@ const projects: Project[] = [
     href: 'https://waverow.app',
     featured: true,
   },
-  {
-    title: 'AI Smart Calendar',
-    stack: ['Next.js', 'TypeScript', 'OpenAI', 'Vercel'],
-    description:
-      'A personal AI-powered calendar app that schedules, reschedules, and prioritizes tasks automatically.',
-    bullets: [
-      'Natural language event creation and smart rescheduling',
-      'AI-driven priority scoring and conflict resolution',
-    ],
-    href: 'https://ai-smart-calendar-nine.vercel.app',
-  },
 ];
 
 export default function Projects() {
