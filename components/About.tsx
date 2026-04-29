@@ -17,12 +17,15 @@ export default function About() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-          <p className="text-[11px] font-semibold tracking-widest uppercase text-accent mb-6">
+          <p className="text-[11px] font-semibold tracking-widest uppercase text-gold/70 mb-3">
             About
           </p>
+          <h2 className="font-display text-[32px] sm:text-[38px] font-bold text-navy mb-8 leading-tight">
+            Background & Context
+          </h2>
 
-          <div className="max-w-2xl space-y-4 text-[15px] text-navy/70 leading-relaxed">
-            <p className="text-[18px] sm:text-[19px] font-medium text-navy leading-relaxed">
+          <div className="max-w-2xl space-y-5 text-[15px] text-navy/70 leading-relaxed">
+            <p className="text-[16px] sm:text-[17px] font-medium text-navy leading-relaxed">
               Sophomore at Tulane University studying Economics with a minor in Artificial
               Intelligence (GPA 3.77). Incoming VC intern at Alumni Ventures, London, Summer 2026.
               Currently building WaveRow, a student housing marketplace for Tulane.
@@ -41,17 +44,23 @@ export default function About() {
           </div>
 
           {/* Stat row */}
-          <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6">
+          <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-6">
             {[
               { value: '3.77', label: 'GPA' },
               { value: 'Economics with AI Minor', label: 'Degree' },
               { value: 'UK & US', label: 'Citizenship' },
               { value: '2028', label: 'Class of' },
-            ].map((stat) => (
-              <div key={stat.label} className="border-l-2 border-navy/10 pl-4">
-                <div className="text-[18px] font-bold text-navy leading-tight">{stat.value}</div>
-                <div className="text-[12px] text-navy/50 font-medium mt-0.5">{stat.label}</div>
-              </div>
+            ].map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 12 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="border-l-2 border-gold/30 pl-4"
+              >
+                <div className="text-[20px] font-bold text-navy leading-tight">{stat.value}</div>
+                <div className="text-[12px] text-navy/50 font-medium mt-1">{stat.label}</div>
+              </motion.div>
             ))}
           </div>
         </motion.div>

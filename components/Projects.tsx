@@ -44,9 +44,12 @@ export default function Projects() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-          <p className="text-[11px] font-semibold tracking-widest uppercase text-accent mb-10">
+          <p className="text-[11px] font-semibold tracking-widest uppercase text-gold/70 mb-4">
             Projects
           </p>
+          <h2 className="font-display text-[32px] sm:text-[38px] font-bold text-navy mb-10 leading-tight">
+            Featured Work
+          </h2>
 
           <div className="grid gap-4 sm:gap-6">
             {projects.map((project, i) => (
@@ -55,10 +58,10 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.45, delay: i * 0.1, ease: 'easeOut' }}
-                className={`group bg-white border rounded-xl transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 ${
+                className={`group bg-white border transition-all duration-300 ${
                   project.featured
-                    ? 'border-navy/15 p-7 sm:p-8'
-                    : 'border-gray-100 p-6'
+                    ? 'border-gold/20 rounded-lg p-7 sm:p-9 hover:border-gold/40 hover:shadow-lg hover:-translate-y-1'
+                    : 'border-gray-100 rounded-lg p-6 hover:shadow-md hover:-translate-y-0.5'
                 }`}
               >
                 <div className="flex items-start justify-between gap-4 mb-4">
@@ -75,7 +78,7 @@ export default function Projects() {
                     )}
                   </h3>
                   {project.featured && (
-                    <span className="flex-shrink-0 text-[10px] font-semibold tracking-widest uppercase text-accent bg-accent/10 border border-accent/20 rounded-full px-2.5 py-1">
+                    <span className="flex-shrink-0 text-[10px] font-semibold tracking-widest uppercase text-gold bg-gold/8 border border-gold/30 rounded-full px-2.5 py-1">
                       Featured
                     </span>
                   )}
@@ -114,7 +117,7 @@ export default function Projects() {
                       href={project.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-accent hover:text-accent-light transition-colors"
+                      className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-gold hover:text-gold/80 transition-colors"
                     >
                       Visit
                       <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -71,10 +71,10 @@ export default function Contact() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-          <p className="text-[11px] font-semibold tracking-widest uppercase text-accent mb-4">
+          <p className="text-[11px] font-semibold tracking-widest uppercase text-gold/60 mb-4">
             Contact
           </p>
-          <h2 className="text-[32px] sm:text-[38px] font-bold text-white mb-3 leading-tight">
+          <h2 className="font-display text-[32px] sm:text-[38px] font-bold text-white mb-4 leading-tight">
             Let&apos;s connect.
           </h2>
           <p className="text-[15px] text-white/50 mb-12 max-w-md">

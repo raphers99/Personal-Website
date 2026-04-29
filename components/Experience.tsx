@@ -18,11 +18,14 @@ export default function Experience() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-          <p className="text-[11px] font-semibold tracking-widest uppercase text-accent mb-10">
+          <p className="text-[11px] font-semibold tracking-widest uppercase text-gold/70 mb-4">
             Experience
           </p>
+          <h2 className="font-display text-[32px] sm:text-[38px] font-bold text-navy mb-10 leading-tight">
+            Work History
+          </h2>
 
-          <div className="space-y-0 divide-y divide-gray-100">
+          <div className="space-y-0 divide-y divide-gold/10">
             {experiences.map((exp, i) => (
               <motion.div
                 key={i}
