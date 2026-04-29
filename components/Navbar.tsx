@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { Logo } from './Logo';
 
 const navLinks = [
   { label: 'About', href: '#about' },
@@ -58,9 +59,12 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-container mx-auto px-6 h-16 flex items-center justify-between">
-        <span className="font-semibold text-navy text-[15px] tracking-tight">
-          Joseph Raphael
-        </span>
+        <div className="flex items-center gap-3">
+          <Logo />
+          <span className="font-semibold text-navy text-[14px] tracking-tight hidden sm:block">
+            JR
+          </span>
+        </div>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-7">
@@ -70,13 +74,13 @@ export default function Navbar() {
               onClick={() => handleNavClick(link.href)}
               className={`text-[13px] font-medium transition-all tracking-wide uppercase relative group ${
                 activeSection === link.href
-                  ? 'text-gold'
+                  ? 'text-emerald'
                   : 'text-navy/70 hover:text-navy'
               }`}
             >
               {link.label}
               <span
-                className={`absolute -bottom-1 left-0 h-0.5 bg-gold transition-all duration-300 ${
+                className={`absolute -bottom-1 left-0 h-0.5 bg-emerald transition-all duration-300 ${
                   activeSection === link.href ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}
               />

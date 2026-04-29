@@ -1,7 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
+import { useRef } from 'react';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -13,8 +14,12 @@ const fadeUp = {
 };
 
 export default function Hero() {
+  const ref = useRef(null);
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 300], [0, 100]);
+
   return (
-    <section className="min-h-screen flex items-center bg-navy relative overflow-hidden">
+    <section ref={ref} className="min-h-screen flex items-center bg-navy relative overflow-hidden">
       {/* Subtle grid texture */}
       <div
         className="absolute inset-0 opacity-[0.04]"
@@ -35,8 +40,8 @@ export default function Hero() {
           >
             {/* Badge */}
             <motion.div variants={fadeUp} custom={0}>
-              <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-widest uppercase text-gold border border-gold/40 bg-gold/8 rounded-full px-3.5 py-1.5 mb-8">
-                <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+              <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-widest uppercase text-emerald border border-emerald/40 bg-emerald/8 rounded-full px-3.5 py-1.5 mb-8">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald animate-pulse" />
                 Incoming VC Intern &mdash; Alumni Ventures &apos;26
               </span>
             </motion.div>
@@ -52,7 +57,7 @@ export default function Hero() {
 
             {/* Headline */}
             <motion.div variants={fadeUp} custom={0.25}>
-              <p className="text-[15px] sm:text-[16px] font-medium text-gold/90 mb-1">
+              <p className="text-[15px] sm:text-[16px] font-medium text-emerald/90 mb-1">
                 Economics & AI @ Tulane University
               </p>
             </motion.div>
@@ -75,7 +80,7 @@ export default function Hero() {
               <a
                 href="/resume.pdf"
                 download
-                className="inline-flex items-center gap-2 bg-gold text-navy text-[13px] font-semibold px-6 py-2.5 rounded-sm hover:bg-gold/90 transition-all duration-200 hover:shadow-lg"
+                className="inline-flex items-center gap-2 bg-emerald text-navy text-[13px] font-semibold px-6 py-2.5 rounded-sm hover:bg-emerald/90 transition-all duration-200 hover:shadow-lg"
               >
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -87,7 +92,7 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/josephraphael04"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-gold/40 text-gold text-[13px] font-semibold px-6 py-2.5 rounded-sm hover:bg-gold/5 transition-all duration-200"
+                className="inline-flex items-center gap-2 border border-emerald/40 text-emerald text-[13px] font-semibold px-6 py-2.5 rounded-sm hover:bg-emerald/5 transition-all duration-200"
               >
                 <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -107,11 +112,12 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right: Headshot */}
+          {/* Right: Headshot with Parallax */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
+            initial={{ opacity: 0, scale: 0.95, x: 40 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+            style={{ y }}
             className="flex-shrink-0"
           >
             <div className="w-[300px] h-[390px] sm:w-[460px] sm:h-[580px]">

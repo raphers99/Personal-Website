@@ -15,10 +15,11 @@ const config: Config = {
           dark: '#071528',
         },
         accent: {
-          DEFAULT: '#4A7C59',
-          light: '#5E9970',
+          DEFAULT: '#10B981',
+          light: '#34D399',
+          dark: '#059669',
         },
-        gold: '#B8972A',
+        emerald: '#10B981',
         offwhite: '#F7F7F5',
       },
       fontFamily: {

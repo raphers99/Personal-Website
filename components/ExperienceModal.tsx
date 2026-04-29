@@ -38,13 +38,14 @@ export function ExperienceModal({ experience, onClose }: ExperienceModalProps) {
             className="fixed inset-0 bg-black/40 z-40"
           />
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            initial={{ opacity: 0, scale: 0.95, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            exit={{ opacity: 0, scale: 0.95, y: 30 }}
+            transition={{ type: 'spring', damping: 30, stiffness: 400 }}
             onClick={(e) => e.stopPropagation()}
-            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-8 max-w-lg w-11/12 z-50 shadow-2xl"
+            className="fixed inset-0 flex items-center justify-center px-4 z-50"
           >
+            <div className="bg-white rounded-lg p-8 max-w-lg w-full shadow-2xl max-h-[90vh] overflow-y-auto">
             <button
               onClick={onClose}
               className="absolute top-5 right-5 text-navy/40 hover:text-navy transition-colors"
@@ -64,7 +65,7 @@ export function ExperienceModal({ experience, onClose }: ExperienceModalProps) {
               <h3 className="font-display text-[24px] font-bold text-navy mb-2">
                 {experience.role}
               </h3>
-              <p className="text-[14px] text-gold font-medium mb-3">
+              <p className="text-[14px] text-emerald font-medium mb-3">
                 {experience.organization}
               </p>
               <div className="flex flex-wrap gap-3 text-[12px] text-navy/60">
@@ -81,7 +82,7 @@ export function ExperienceModal({ experience, onClose }: ExperienceModalProps) {
             <ul className="space-y-3">
               {experience.bullets.map((bullet, i) => (
                 <li key={i} className="flex gap-3 text-[14px] text-navy/70 leading-relaxed">
-                  <span className="mt-[6px] w-1 h-1 min-w-[4px] rounded-full bg-gold flex-shrink-0" />
+                  <span className="mt-[6px] w-1 h-1 min-w-[4px] rounded-full bg-emerald flex-shrink-0" />
                   {bullet}
                 </li>
               ))}
@@ -90,6 +91,7 @@ export function ExperienceModal({ experience, onClose }: ExperienceModalProps) {
             <p className="text-[12px] text-navy/40 mt-8 pt-4 border-t border-navy/10">
               Press ESC to close
             </p>
+            </div>
           </motion.div>
         </>
       )}

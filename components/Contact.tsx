@@ -7,9 +7,19 @@ import { Toast } from './Toast';
 
 const contactLinks = [
   {
-    label: 'Email',
+    label: 'Personal Email',
+    value: 'jrapha04@yahoo.com',
+    copy: true,
+    icon: (
+      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'School Email',
     value: 'jraphael1@tulane.edu',
-    href: 'mailto:jraphael1@tulane.edu',
+    copy: true,
     icon: (
       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -78,7 +88,7 @@ export default function Contact() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-          <p className="text-[11px] font-semibold tracking-widest uppercase text-gold/60 mb-4">
+          <p className="text-[11px] font-semibold tracking-widest uppercase text-emerald/60 mb-4">
             Contact
           </p>
           <h2 className="font-display text-[32px] sm:text-[38px] font-bold text-white mb-4 leading-tight">
@@ -90,7 +100,7 @@ export default function Contact() {
 
           <div className="grid sm:grid-cols-2 gap-3">
             {contactLinks.map((link) => {
-              const isCopyable = link.label === 'Email' || link.label === 'Phone';
+              const isCopyable = link.copy || link.label === 'Phone';
               const Component = isCopyable ? 'button' : 'a';
 
               return (
@@ -98,18 +108,18 @@ export default function Contact() {
                   key={link.label}
                   {...(isCopyable
                     ? {
-                        type: 'button',
+                        type: 'button' as const,
                         onClick: () => handleCopy(link.value, link.label),
                       }
                     : {
-                        href: link.href,
-                        target: link.href.startsWith('http') ? '_blank' : undefined,
-                        rel: link.href.startsWith('http') ? 'noopener noreferrer' : undefined,
+                        href: link.href || '',
+                        target: link.href?.startsWith('http') ? '_blank' : undefined,
+                        rel: link.href?.startsWith('http') ? 'noopener noreferrer' : undefined,
                         download: link.download,
                       })}
-                  className="group flex items-center gap-4 bg-white/5 border border-white/10 rounded-xl px-5 py-4 hover:bg-white/10 hover:border-gold/30 transition-all duration-200 text-left"
+                  className="group flex items-center gap-4 bg-white/5 border border-white/10 rounded-xl px-5 py-4 hover:bg-white/10 hover:border-emerald/30 transition-all duration-200 text-left"
                 >
-                  <div className="text-gold group-hover:text-gold/80 transition-colors">
+                  <div className="text-emerald group-hover:text-emerald/80 transition-colors">
                     {link.icon}
                   </div>
                   <div>

@@ -17,7 +17,7 @@ export default function About() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-          <p className="text-[11px] font-semibold tracking-widest uppercase text-gold/70 mb-3">
+          <p className="text-[11px] font-semibold tracking-widest uppercase text-emerald/70 mb-3">
             About
           </p>
           <h2 className="font-display text-[32px] sm:text-[38px] font-bold text-navy mb-8 leading-tight">
@@ -56,7 +56,7 @@ export default function About() {
                 initial={{ opacity: 0, y: 12 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="border-l-2 border-gold/30 pl-4"
+                className="border-l-2 border-emerald/30 pl-4"
               >
                 <div className="text-[20px] font-bold text-navy leading-tight">{stat.value}</div>
                 <div className="text-[12px] text-navy/50 font-medium mt-1">{stat.label}</div>
