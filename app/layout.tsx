@@ -2,14 +2,22 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://josephajax.com'),
   title: 'Joseph Raphael',
-  description:
-    'Economics & AI @ Tulane University. Building at the intersection of markets, data, and software.',
+  description: 'Finance focused. UK & US citizen. Incoming VC intern at Alumni Ventures.',
   openGraph: {
     title: 'Joseph Raphael',
-    description:
-      'Economics & AI @ Tulane University. Building at the intersection of markets, data, and software.',
+    description: 'Finance focused. UK & US citizen.',
     type: 'website',
+    url: 'https://josephajax.com',
+    images: [
+      {
+        url: '/api/og?title=Joseph%20Raphael&description=Finance%20focused.%20UK%20%26%20US%20citizen.',
+        width: 1200,
+        height: 630,
+        alt: 'Joseph Raphael',
+      },
+    ],
   },
 };
 

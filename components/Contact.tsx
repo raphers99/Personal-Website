@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import { Toast } from './Toast';
 
 const contactLinks = [
   {
@@ -61,9 +62,15 @@ const contactLinks = [
 export default function Contact() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
+  const [toast, setToast] = useState<string | null>(null);
+
+  const handleCopy = (value: string, label: string) => {
+    navigator.clipboard.writeText(value);
+    setToast(`${label} copied!`);
+  };
 
   return (
-    <section id="contact" className="py-24 px-6 bg-navy">
+    <section id="contact" className="py-24 px-6 bg-navy relative">
       <div className="max-w-container mx-auto">
         <motion.div
           ref={ref}
@@ -82,27 +89,48 @@ export default function Contact() {
           </p>
 
           <div className="grid sm:grid-cols-2 gap-3">
-            {contactLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target={link.href.startsWith('http') ? '_blank' : undefined}
-                rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                download={link.download}
-                className="group flex items-center gap-4 bg-white/5 border border-white/10 rounded-xl px-5 py-4 hover:bg-white/10 hover:border-white/20 transition-all duration-200"
-              >
-                <div className="text-accent">{link.icon}</div>
-                <div>
-                  <p className="text-[11px] font-semibold tracking-wider uppercase text-white/35 mb-0.5">
-                    {link.label}
-                  </p>
-                  <p className="text-[14px] font-medium text-white/80 group-hover:text-white transition-colors">
-                    {link.value}
-                  </p>
-                </div>
-              </a>
-            ))}
+            {contactLinks.map((link) => {
+              const isCopyable = link.label === 'Email' || link.label === 'Phone';
+              const Component = isCopyable ? 'button' : 'a';
+
+              return (
+                <Component
+                  key={link.label}
+                  {...(isCopyable
+                    ? {
+                        type: 'button',
+                        onClick: () => handleCopy(link.value, link.label),
+                      }
+                    : {
+                        href: link.href,
+                        target: link.href.startsWith('http') ? '_blank' : undefined,
+                        rel: link.href.startsWith('http') ? 'noopener noreferrer' : undefined,
+                        download: link.download,
+                      })}
+                  className="group flex items-center gap-4 bg-white/5 border border-white/10 rounded-xl px-5 py-4 hover:bg-white/10 hover:border-gold/30 transition-all duration-200 text-left"
+                >
+                  <div className="text-gold group-hover:text-gold/80 transition-colors">
+                    {link.icon}
+                  </div>
+                  <div>
+                    <p className="text-[11px] font-semibold tracking-wider uppercase text-white/35 mb-0.5">
+                      {link.label}
+                    </p>
+                    <p className="text-[14px] font-medium text-white/80 group-hover:text-white transition-colors">
+                      {link.value}
+                    </p>
+                  </div>
+                </Component>
+              );
+            })}
           </div>
+
+          {toast && (
+            <Toast
+              message={toast}
+              onClose={() => setToast(null)}
+            />
+          )}
         </motion.div>
       </div>
     </section>

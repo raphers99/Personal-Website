@@ -2,12 +2,14 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { experiences } from '@/data/experience';
+import { ExperienceModal } from './ExperienceModal';
 
 export default function Experience() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
+  const [selectedExperience, setSelectedExperience] = useState<typeof experiences[0] | null>(null);
 
   return (
     <section id="experience" className="py-24 px-6 bg-white">
@@ -18,6 +20,7 @@ export default function Experience() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
+          <ExperienceModal experience={selectedExperience} onClose={() => setSelectedExperience(null)} />
           <p className="text-[11px] font-semibold tracking-widest uppercase text-gold/70 mb-4">
             Experience
           </p>
@@ -27,12 +30,13 @@ export default function Experience() {
 
           <div className="space-y-0 divide-y divide-gold/10">
             {experiences.map((exp, i) => (
-              <motion.div
+              <motion.button
                 key={i}
                 initial={{ opacity: 0, y: 16 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.45, delay: i * 0.1, ease: 'easeOut' }}
-                className="py-8 grid sm:grid-cols-[200px_1fr] gap-4 sm:gap-8"
+                onClick={() => setSelectedExperience(exp)}
+                className="w-full py-8 grid sm:grid-cols-[200px_1fr] gap-4 sm:gap-8 hover:bg-gold/3 transition-colors duration-200 text-left group"
               >
                 {/* Left column */}
                 <div>
@@ -45,20 +49,15 @@ export default function Experience() {
                 {/* Right column */}
                 <div>
                   <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1 mb-1">
-                    <h3 className="text-[16px] font-semibold text-navy">{exp.role}</h3>
+                    <h3 className="text-[16px] font-semibold text-navy group-hover:text-gold transition-colors">{exp.role}</h3>
                     <span className="text-[13px] text-navy/50">— {exp.organization}</span>
                   </div>
                   <p className="text-[13px] text-navy/55 mb-4">{exp.description}</p>
-                  <ul className="space-y-2">
-                    {exp.bullets.map((bullet, j) => (
-                      <li key={j} className="flex gap-3 text-[13px] text-navy/65 leading-relaxed">
-                        <span className="mt-[6px] w-1 h-1 min-w-[4px] rounded-full bg-accent" />
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="flex items-center gap-2 text-[12px] text-gold/70 group-hover:text-gold transition-colors">
+                    Click to view details →
+                  </div>
                 </div>
-              </motion.div>
+              </motion.button>
             ))}
           </div>
         </motion.div>

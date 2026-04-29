@@ -6,13 +6,13 @@ const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' },
   { label: 'Contact', href: '#contact' },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -20,10 +20,33 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(`#${entry.target.id}`);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    navLinks.forEach((link) => {
+      const el = document.querySelector(link.href);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const handleNavClick = (href: string) => {
     setMenuOpen(false);
     const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(href);
+    }
   };
 
   return (
@@ -45,9 +68,18 @@ export default function Navbar() {
             <button
               key={link.href}
               onClick={() => handleNavClick(link.href)}
-              className="text-[13px] font-medium text-navy/70 hover:text-navy transition-colors tracking-wide uppercase"
+              className={`text-[13px] font-medium transition-all tracking-wide uppercase relative group ${
+                activeSection === link.href
+                  ? 'text-gold'
+                  : 'text-navy/70 hover:text-navy'
+              }`}
             >
               {link.label}
+              <span
+                className={`absolute -bottom-1 left-0 h-0.5 bg-gold transition-all duration-300 ${
+                  activeSection === link.href ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}
+              />
             </button>
           ))}
         </nav>
