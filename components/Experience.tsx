@@ -36,6 +36,8 @@ export default function Experience() {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.45, delay: i * 0.1, ease: 'easeOut' }}
                 onClick={() => setSelectedExperience(exp)}
+                onMouseEnter={() => setSelectedExperience(exp)}
+                onMouseLeave={() => setSelectedExperience(null)}
                 className="w-full py-8 grid sm:grid-cols-[200px_1fr] gap-4 sm:gap-8 hover:bg-white/5 transition-colors duration-200 text-left group"
               >
                 {/* Left column */}
