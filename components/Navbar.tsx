@@ -54,15 +54,15 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm'
+          ? 'bg-navy/95 backdrop-blur-sm border-b border-navy/30 shadow-sm'
           : 'bg-transparent'
       }`}
     >
       <div className="max-w-container mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Logo />
-          <span className="font-semibold text-navy text-[14px] tracking-tight hidden sm:block">
-            JR
+          <span className="font-semibold text-white text-[14px] tracking-tight hidden sm:block">
+            Joseph
           </span>
         </div>
 
@@ -75,7 +75,7 @@ export default function Navbar() {
               className={`text-[13px] font-medium transition-all tracking-wide uppercase relative group ${
                 activeSection === link.href
                   ? 'text-emerald'
-                  : 'text-navy/70 hover:text-navy'
+                  : 'text-white/70 hover:text-white'
               }`}
             >
               {link.label}
@@ -95,17 +95,17 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           <span
-            className={`block w-5 h-0.5 bg-navy transition-transform duration-200 ${
+            className={`block w-5 h-0.5 bg-white transition-transform duration-200 ${
               menuOpen ? 'translate-y-2 rotate-45' : ''
             }`}
           />
           <span
-            className={`block w-5 h-0.5 bg-navy transition-opacity duration-200 ${
+            className={`block w-5 h-0.5 bg-white transition-opacity duration-200 ${
               menuOpen ? 'opacity-0' : ''
             }`}
           />
           <span
-            className={`block w-5 h-0.5 bg-navy transition-transform duration-200 ${
+            className={`block w-5 h-0.5 bg-white transition-transform duration-200 ${
               menuOpen ? '-translate-y-2 -rotate-45' : ''
             }`}
           />
@@ -114,12 +114,12 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-b border-gray-100 px-6 pb-5">
+        <div className="md:hidden bg-navy border-b border-navy/30 px-6 pb-5">
           {navLinks.map((link) => (
             <button
               key={link.href}
               onClick={() => handleNavClick(link.href)}
-              className="block w-full text-left py-2.5 text-sm font-medium text-navy/70 hover:text-navy transition-colors"
+              className="block w-full text-left py-2.5 text-sm font-medium text-white/70 hover:text-white transition-colors"
             >
               {link.label}
             </button>

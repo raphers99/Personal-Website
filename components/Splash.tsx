@@ -24,7 +24,7 @@ export default function Splash() {
       style={{
         position: 'fixed',
         inset: 0,
-        backgroundColor: '#0B1F3B',
+        backgroundColor: '#0A0A0A',
         zIndex: 999999,
         display: 'flex',
         alignItems: 'center',

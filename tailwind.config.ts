@@ -10,17 +10,17 @@ const config: Config = {
     extend: {
       colors: {
         navy: {
-          DEFAULT: '#0B1F3B',
-          light: '#132A50',
-          dark: '#071528',
+          DEFAULT: '#0A0A0A',
+          light: '#1A1A1A',
+          dark: '#000000',
         },
         accent: {
-          DEFAULT: '#10B981',
-          light: '#34D399',
-          dark: '#059669',
+          DEFAULT: '#D4AF37',
+          light: '#E5C158',
+          dark: '#B8972A',
         },
-        emerald: '#10B981',
-        offwhite: '#F7F7F5',
+        emerald: '#D4AF37',
+        offwhite: '#1A1A1A',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],

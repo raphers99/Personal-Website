@@ -20,12 +20,12 @@ export default function About() {
           <p className="text-[11px] font-semibold tracking-widest uppercase text-emerald/70 mb-3">
             About
           </p>
-          <h2 className="font-display text-[32px] sm:text-[38px] font-bold text-navy mb-8 leading-tight">
+          <h2 className="font-display text-[32px] sm:text-[38px] font-bold text-white mb-8 leading-tight">
             Background & Context
           </h2>
 
-          <div className="max-w-2xl space-y-5 text-[15px] text-navy/70 leading-relaxed">
-            <p className="text-[16px] sm:text-[17px] font-medium text-navy leading-relaxed">
+          <div className="max-w-2xl space-y-5 text-[15px] text-white/70 leading-relaxed">
+            <p className="text-[16px] sm:text-[17px] font-medium text-white leading-relaxed">
               Sophomore at Tulane University studying Economics with a minor in Artificial
               Intelligence (GPA 3.77). Incoming VC intern at Alumni Ventures, London, Summer 2026.
               Currently building WaveRow, a student housing marketplace for Tulane.
@@ -58,8 +58,8 @@ export default function About() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="border-l-2 border-emerald/30 pl-4"
               >
-                <div className="text-[20px] font-bold text-navy leading-tight">{stat.value}</div>
-                <div className="text-[12px] text-navy/50 font-medium mt-1">{stat.label}</div>
+                <div className="text-[20px] font-bold text-white leading-tight">{stat.value}</div>
+                <div className="text-[12px] text-white/50 font-medium mt-1">{stat.label}</div>
               </motion.div>
             ))}
           </div>

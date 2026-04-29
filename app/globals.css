@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  @apply bg-white text-navy font-sans antialiased;
+  @apply bg-navy text-white font-sans antialiased;
 }
 
 @layer utilities {
