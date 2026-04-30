@@ -15,11 +15,9 @@ interface ExperienceData {
 interface ExperienceModalProps {
   experience: ExperienceData | null;
   onClose: () => void;
-  onMouseEnter?: () => void;
-  onMouseLeave?: () => void;
 }
 
-export function ExperienceModal({ experience, onClose, onMouseEnter, onMouseLeave }: ExperienceModalProps) {
+export function ExperienceModal({ experience, onClose }: ExperienceModalProps) {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -40,18 +38,14 @@ export function ExperienceModal({ experience, onClose, onMouseEnter, onMouseLeav
             className="fixed inset-0 bg-black/40 z-40"
           />
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 30 }}
+            initial={{ opacity: 0, scale: 0.8, y: 60 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 30 }}
-            transition={{ type: 'spring', damping: 30, stiffness: 400 }}
+            exit={{ opacity: 0, scale: 0.8, y: 60 }}
+            transition={{ type: 'spring', damping: 25, stiffness: 350 }}
             onClick={(e) => e.stopPropagation()}
             className="fixed inset-0 flex items-center justify-center px-4 z-50"
           >
-            <div
-              className="bg-navy rounded-lg p-8 max-w-lg w-full shadow-2xl max-h-[90vh] overflow-y-auto border border-white/10"
-              onMouseEnter={onMouseEnter}
-              onMouseLeave={onMouseLeave}
-            >
+            <div className="bg-navy rounded-lg p-8 max-w-lg w-full shadow-2xl max-h-[90vh] overflow-y-auto border border-white/10">
             <button
               onClick={onClose}
               className="absolute top-5 right-5 text-white/40 hover:text-white transition-colors"

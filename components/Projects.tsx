@@ -30,6 +30,34 @@ const projects: Project[] = [
     href: 'https://waverow.app',
     featured: true,
   },
+  {
+    title: 'Rhythm',
+    subtitle: 'AI-Powered Smart Calendar',
+    stack: ['Next.js', 'TypeScript', 'AI', 'Calendar API'],
+    description:
+      'An intelligent calendar assistant that learns your scheduling patterns and automatically optimizes your time management with AI-driven insights.',
+    bullets: [
+      'Natural language event creation and scheduling',
+      'AI-powered meeting optimization and time blocking',
+      'Smart conflict detection and schedule recommendations',
+    ],
+    href: 'https://ai-smart-calendar-nine.vercel.app',
+    featured: true,
+  },
+  {
+    title: 'Investment Memo',
+    subtitle: 'Telecom API Monetization',
+    stack: ['Analysis', 'Strategy', 'Finance'],
+    description:
+      'A comprehensive investment thesis on monetization opportunities in telecom API infrastructure and emerging communication platforms.',
+    bullets: [
+      'Market analysis of $500M+ addressable market in API monetization',
+      'Strategic framework for telecom operators to unlock new revenue streams',
+      'Competitive landscape and investment thesis for venture capital',
+    ],
+    href: '/telecom-api-memo.pdf',
+    featured: true,
+  },
 ];
 
 export default function Projects() {
