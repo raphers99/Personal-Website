@@ -45,23 +45,23 @@ export function ExperienceModal({ experience, onClose }: ExperienceModalProps) {
             onClick={(e) => e.stopPropagation()}
             className="fixed inset-0 flex items-center justify-center px-4 z-50"
           >
-            <div className="bg-navy rounded-lg p-8 max-w-lg w-full shadow-2xl max-h-[90vh] overflow-y-auto border border-white/10">
-            <button
-              onClick={onClose}
-              className="absolute top-5 right-5 text-white/40 hover:text-white transition-colors"
-              aria-label="Close"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
+            <div className="bg-navy rounded-lg p-8 max-w-lg w-full shadow-2xl max-h-[90vh] overflow-y-auto border border-white/10 relative">
+              <button
+                onClick={onClose}
+                className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors p-1"
+                aria-label="Close"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
 
-            <div className="mb-6">
+              <div className="mb-6 pr-8">
               <h3 className="font-display text-[24px] font-bold text-white mb-2">
                 {experience.role}
               </h3>
