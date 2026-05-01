@@ -17,7 +17,7 @@ export async function GET(request: Request) {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'linear-gradient(135deg, #0D3B2E 0%, #1a4d3e 100%)',
+          background: 'linear-gradient(135deg, #0A192F 0%, #112240 100%)',
           padding: '40px',
           fontFamily: 'system-ui',
         }}
@@ -47,7 +47,7 @@ export async function GET(request: Request) {
           <p
             style={{
               fontSize: '28px',
-              color: '#D4AF37',
+              color: '#64FFDA',
               margin: '0',
               maxWidth: '700px',
             }}
