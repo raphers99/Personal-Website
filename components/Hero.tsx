@@ -216,6 +216,10 @@ export default function Hero() {
               style={{
                 filter:
                   'drop-shadow(0 25px 50px rgba(0,0,0,0.7)) drop-shadow(0 10px 25px rgba(100,255,218,0.18))',
+                maskImage:
+                  'linear-gradient(to bottom, black 0%, black 75%, rgba(0,0,0,0.85) 88%, rgba(0,0,0,0.5) 95%, transparent 100%)',
+                WebkitMaskImage:
+                  'linear-gradient(to bottom, black 0%, black 75%, rgba(0,0,0,0.85) 88%, rgba(0,0,0,0.5) 95%, transparent 100%)',
               }}
             >
               <Image
@@ -230,6 +234,14 @@ export default function Hero() {
                 priority
               />
             </div>
+
+            {/* Bottom blend gradient overlay */}
+            <div
+              className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+              style={{
+                background: 'linear-gradient(to bottom, transparent 0%, rgba(10, 25, 47, 0.4) 50%, rgba(10, 25, 47, 1) 100%)',
+              }}
+            />
 
             {/* Subtle floating particles for depth */}
             <motion.div

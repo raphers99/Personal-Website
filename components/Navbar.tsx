@@ -61,9 +61,6 @@ export default function Navbar() {
       <div className="max-w-container mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Logo />
-          <span className="font-semibold text-[15px] tracking-tight hidden sm:block" style={{ color: '#E6F1FF' }}>
-            Joseph
-          </span>
         </div>
 
         {/* Desktop Nav */}
