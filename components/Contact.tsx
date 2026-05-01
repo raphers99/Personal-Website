@@ -80,7 +80,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 bg-navy relative">
+    <section id="contact" className="py-16 px-6 bg-navy relative">
       <div className="max-w-container mx-auto">
         <motion.div
           ref={ref}
@@ -88,13 +88,13 @@ export default function Contact() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-          <p className="text-[11px] font-semibold tracking-widest uppercase text-emerald/60 mb-4">
+          <p className="text-[12px] font-semibold tracking-widest uppercase text-emerald/60 mb-4">
             Contact
           </p>
-          <h2 className="font-display text-[32px] sm:text-[38px] font-bold text-white mb-4 leading-tight">
+          <h2 className="font-display text-[36px] sm:text-[44px] font-bold text-white mb-4 leading-tight">
             Let&apos;s connect.
           </h2>
-          <p className="text-[15px] text-white/50 mb-12 max-w-md">
+          <p className="text-[16px] text-white/60 mb-10 max-w-md">
             Open to internship conversations in venture capital, sales & trading, and wealth management.
           </p>
 

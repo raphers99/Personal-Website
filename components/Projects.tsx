@@ -65,7 +65,7 @@ export default function Projects() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section id="projects" className="py-24 px-6 bg-navy">
+    <section id="projects" className="py-16 px-6 bg-navy">
       <div className="max-w-container mx-auto">
         <motion.div
           ref={ref}
@@ -73,10 +73,10 @@ export default function Projects() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-          <p className="text-[11px] font-semibold tracking-widest uppercase text-emerald/70 mb-4">
+          <p className="text-[12px] font-semibold tracking-widest uppercase text-emerald/70 mb-4">
             Projects
           </p>
-          <h2 className="font-display text-[32px] sm:text-[38px] font-bold text-white mb-10 leading-tight">
+          <h2 className="font-display text-[36px] sm:text-[44px] font-bold text-white mb-10 leading-tight">
             Featured Work
           </h2>
 
