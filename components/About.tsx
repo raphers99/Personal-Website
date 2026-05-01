@@ -31,10 +31,11 @@ export default function About() {
               Currently building WaveRow, a student housing marketplace for Tulane.
             </p>
             <p>
-              Originally from Gloucestershire, England. Studied at Cheltenham College, took a gap
-              year working across Australia, Southeast Asia, and South America — including six weeks
-              volunteering in Sri Lanka. Brought that same drive back to New Orleans. Top performer
-              in face-to-face fundraising, then moved into SaaS sales and academic leadership.
+              Originally from Gloucestershire, England. Studied at Cheltenham College, then took a
+              gap year working across Australia, Southeast Asia, and South America — including six
+              weeks volunteering in Sri Lanka. Worked in face-to-face sales in Australia before
+              bringing that drive to New Orleans. Now at Tulane as a Teaching Assistant and Manager
+              of the Data Peer Mentor program, leading peer support across the department.
             </p>
             <p>
               Drawn to capital markets, venture, and the data infrastructure behind investment
