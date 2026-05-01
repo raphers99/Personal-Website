@@ -215,11 +215,7 @@ export default function Hero() {
               className="relative w-[300px] h-[390px] sm:w-[460px] sm:h-[580px]"
               style={{
                 filter:
-                  'drop-shadow(0 25px 50px rgba(0,0,0,0.7)) drop-shadow(0 10px 25px rgba(100,255,218,0.2)) drop-shadow(0 0 60px rgba(100,255,218,0.1))',
-                maskImage:
-                  'linear-gradient(to bottom, black 70%, rgba(0,0,0,0.92) 85%, rgba(0,0,0,0.7) 95%, transparent 100%)',
-                WebkitMaskImage:
-                  'linear-gradient(to bottom, black 70%, rgba(0,0,0,0.92) 85%, rgba(0,0,0,0.7) 95%, transparent 100%)',
+                  'drop-shadow(0 25px 50px rgba(0,0,0,0.7)) drop-shadow(0 10px 25px rgba(100,255,218,0.18))',
               }}
             >
               <Image
@@ -229,7 +225,7 @@ export default function Hero() {
                 height={580}
                 className="w-full h-full object-contain object-bottom"
                 style={{
-                  filter: 'contrast(1.05) saturate(1.05)',
+                  filter: 'contrast(1.08) saturate(1.1) brightness(1.02)',
                 }}
                 priority
               />
