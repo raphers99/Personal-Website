@@ -186,22 +186,40 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95, x: 40 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+            transition={{ duration: 0.9, ease: 'easeOut', delay: 0.2 }}
             style={{ y }}
             className="flex-shrink-0 relative"
           >
-            {/* Teal glow behind headshot */}
+            {/* Multi-layered ambient glow */}
             <div
               className="absolute inset-0 -z-0"
               style={{
-                background: 'radial-gradient(circle at center, rgba(100, 255, 218, 0.15) 0%, transparent 60%)',
-                filter: 'blur(40px)',
+                background:
+                  'radial-gradient(ellipse at 60% 30%, rgba(100, 255, 218, 0.25) 0%, transparent 50%), radial-gradient(ellipse at 40% 60%, rgba(124, 131, 253, 0.15) 0%, transparent 50%)',
+                filter: 'blur(60px)',
+                transform: 'scale(1.2)',
               }}
             />
+
+            {/* Soft outer aura */}
+            <div
+              className="absolute inset-0 -z-0"
+              style={{
+                background: 'radial-gradient(circle at center, rgba(100, 255, 218, 0.08) 0%, transparent 70%)',
+                filter: 'blur(80px)',
+                transform: 'scale(1.4)',
+              }}
+            />
+
             <div
               className="relative w-[300px] h-[390px] sm:w-[460px] sm:h-[580px]"
               style={{
-                filter: 'drop-shadow(0 20px 60px rgba(0,0,0,0.6)) drop-shadow(0 0 40px rgba(100,255,218,0.15))',
+                filter:
+                  'drop-shadow(0 25px 50px rgba(0,0,0,0.7)) drop-shadow(0 10px 25px rgba(100,255,218,0.2)) drop-shadow(0 0 60px rgba(100,255,218,0.1))',
+                maskImage:
+                  'linear-gradient(to bottom, black 70%, rgba(0,0,0,0.92) 85%, rgba(0,0,0,0.7) 95%, transparent 100%)',
+                WebkitMaskImage:
+                  'linear-gradient(to bottom, black 70%, rgba(0,0,0,0.92) 85%, rgba(0,0,0,0.7) 95%, transparent 100%)',
               }}
             >
               <Image
@@ -210,9 +228,26 @@ export default function Hero() {
                 width={460}
                 height={580}
                 className="w-full h-full object-contain object-bottom"
+                style={{
+                  filter: 'contrast(1.05) saturate(1.05)',
+                }}
                 priority
               />
             </div>
+
+            {/* Subtle floating particles for depth */}
+            <motion.div
+              className="absolute top-10 right-10 w-2 h-2 rounded-full"
+              style={{ background: 'rgba(100, 255, 218, 0.6)', boxShadow: '0 0 10px rgba(100, 255, 218, 0.8)' }}
+              animate={{ y: [0, -15, 0], opacity: [0.4, 0.8, 0.4] }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+            />
+            <motion.div
+              className="absolute bottom-32 left-4 w-1.5 h-1.5 rounded-full"
+              style={{ background: 'rgba(124, 131, 253, 0.6)', boxShadow: '0 0 8px rgba(124, 131, 253, 0.8)' }}
+              animate={{ y: [0, 20, 0], opacity: [0.3, 0.7, 0.3] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+            />
           </motion.div>
         </div>
       </div>

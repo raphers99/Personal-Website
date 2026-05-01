@@ -1,4 +1,5 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="32" height="32" rx="6" fill="#0A192F" stroke="#64FFDA" stroke-opacity="0.3"/>
-  <text x="16" y="22" font-family="'Playfair Display', Georgia, serif" font-size="16" font-weight="700" fill="#64FFDA" text-anchor="middle" dominant-baseline="middle">JR</text>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="12" fill="#0A192F"/>
+  <rect x="0.5" y="0.5" width="63" height="63" rx="11.5" stroke="#64FFDA" stroke-opacity="0.4"/>
+  <text x="32" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="32" font-weight="700" fill="#64FFDA" text-anchor="middle" dominant-baseline="central">JR</text>
 </svg>
