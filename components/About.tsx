@@ -27,7 +27,7 @@ export default function About() {
           <div className="max-w-2xl space-y-5 text-[16px] text-white/70 leading-relaxed">
             <p className="text-[17px] sm:text-[19px] font-medium text-white leading-relaxed">
               Sophomore at Tulane University studying Economics with a minor in Artificial
-              Intelligence. Currently building WaveRow, a student housing marketplace for Tulane.
+              Intelligence.
             </p>
             <p>
               Originally from Gloucestershire, England. Studied at Cheltenham College, then took a

@@ -44,20 +44,6 @@ const projects: Project[] = [
     href: 'https://ai-smart-calendar-nine.vercel.app',
     featured: true,
   },
-  {
-    title: 'Investment Memo',
-    subtitle: 'Telecom API Monetization',
-    stack: ['Analysis', 'Strategy', 'Finance'],
-    description:
-      'A comprehensive investment thesis on monetization opportunities in telecom API infrastructure and emerging communication platforms.',
-    bullets: [
-      'Market analysis of $500M+ addressable market in API monetization',
-      'Strategic framework for telecom operators to unlock new revenue streams',
-      'Competitive landscape and investment thesis for venture capital',
-    ],
-    href: '/telecom-api-memo.pdf',
-    featured: true,
-  },
 ];
 
 export default function Projects() {
