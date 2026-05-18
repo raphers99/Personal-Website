@@ -9,17 +9,6 @@ export interface ExperienceItem {
 
 export const experiences: ExperienceItem[] = [
   {
-    role: 'Venture Capital Intern',
-    organization: 'Alumni Ventures',
-    location: 'London, UK',
-    period: 'May – Jul 2026',
-    description: 'Incoming intern at one of the most active VC firms in the US, covering EMEA and US early- to growth-stage deals.',
-    bullets: [
-      'Selected for a competitive internship focused on deal sourcing, due diligence, and investment memo support',
-      'Coverage across defence, technology, and innovation sectors in EMEA and US markets',
-    ],
-  },
-  {
     role: 'Data Peer Mentor Manager / Teaching Assistant',
     organization: 'Tulane University',
     location: 'New Orleans, LA',

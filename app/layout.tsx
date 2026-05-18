@@ -6,7 +6,7 @@ import { FloatingElements } from '@/components/FloatingElements';
 export const metadata: Metadata = {
   metadataBase: new URL('https://josephajax.com'),
   title: 'Joseph Raphael',
-  description: 'Finance focused. UK & US citizen. Incoming VC intern at Alumni Ventures.',
+  description: 'Finance focused. UK & US citizen.',
   icons: {
     icon: '/favicon.svg',
   },

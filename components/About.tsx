@@ -27,8 +27,7 @@ export default function About() {
           <div className="max-w-2xl space-y-5 text-[16px] text-white/70 leading-relaxed">
             <p className="text-[17px] sm:text-[19px] font-medium text-white leading-relaxed">
               Sophomore at Tulane University studying Economics with a minor in Artificial
-              Intelligence (GPA 3.77). Incoming VC intern at Alumni Ventures, London, Summer 2026.
-              Currently building WaveRow, a student housing marketplace for Tulane.
+              Intelligence. Currently building WaveRow, a student housing marketplace for Tulane.
             </p>
             <p>
               Originally from Gloucestershire, England. Studied at Cheltenham College, then took a
@@ -45,9 +44,8 @@ export default function About() {
           </div>
 
           {/* Stat row */}
-          <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-6">
+          <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 gap-6">
             {[
-              { value: '3.77', label: 'GPA' },
               { value: 'Economics with AI Minor', label: 'Degree' },
               { value: 'UK & US', label: 'Citizenship' },
               { value: '2028', label: 'Class of' },

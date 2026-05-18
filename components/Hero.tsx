@@ -55,21 +55,6 @@ export default function Hero() {
             animate="visible"
             className="flex-1 max-w-xl"
           >
-            {/* Badge */}
-            <motion.div variants={fadeUp} custom={0}>
-              <span
-                className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-widest uppercase rounded-full px-3.5 py-1.5 mb-8"
-                style={{
-                  color: '#64FFDA',
-                  background: 'rgba(100, 255, 218, 0.1)',
-                  border: '1px solid rgba(100, 255, 218, 0.3)',
-                }}
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                Incoming VC Intern &mdash; Alumni Ventures &apos;26
-              </span>
-            </motion.div>
-
             {/* Name */}
             <motion.h1
               variants={fadeUp}
@@ -83,7 +68,7 @@ export default function Hero() {
             {/* Headline */}
             <motion.div variants={fadeUp} custom={0.25}>
               <p className="text-[15px] sm:text-[17px] font-medium mb-2" style={{ color: '#64FFDA' }}>
-                Economics & AI @ Tulane University
+                Student at Tulane University
               </p>
             </motion.div>
 
