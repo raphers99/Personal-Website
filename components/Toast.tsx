@@ -21,7 +21,7 @@ export function Toast({ message, duration = 2000, onClose }: ToastProps) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.2 }}
-      className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 bg-emerald text-navy px-5 py-3 rounded-lg font-medium text-[13px] shadow-lg"
+      className="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-ember text-paper px-5 py-2.5 font-mono uppercase tracking-widest2 text-[10.5px]"
     >
       {message}
     </motion.div>

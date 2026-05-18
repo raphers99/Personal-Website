@@ -35,62 +35,63 @@ export function ExperienceModal({ experience, onClose }: ExperienceModalProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/40 z-40"
+            className="fixed inset-0 z-40"
+            style={{ background: 'rgba(7, 7, 6, 0.78)', backdropFilter: 'blur(2px)' }}
           />
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 60 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, y: 60 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 350 }}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 24 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             onClick={(e) => e.stopPropagation()}
-            className="fixed inset-0 flex items-center justify-center px-4 z-50"
+            className="fixed inset-0 flex items-center justify-center px-4 z-50 pointer-events-none"
           >
-            <div className="bg-navy rounded-lg p-8 max-w-lg w-full shadow-2xl max-h-[90vh] overflow-y-auto border border-white/10 relative">
-              <button
-                onClick={onClose}
-                className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors p-1"
-                aria-label="Close"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-
-              <div className="mb-6 pr-8">
-              <h3 className="font-display text-[24px] font-bold text-white mb-2">
-                {experience.role}
-              </h3>
-              <p className="text-[14px] text-emerald font-medium mb-3">
-                {experience.organization}
-              </p>
-              <div className="flex flex-wrap gap-3 text-[12px] text-white/60">
-                <span>{experience.period}</span>
-                <span>•</span>
-                <span>{experience.location}</span>
+            <div className="bg-paper rule-t rule-b border-x border-rule max-w-2xl w-full max-h-[88vh] overflow-y-auto pointer-events-auto">
+              <div className="px-8 py-7 rule-b flex items-center justify-between">
+                <span className="font-mono uppercase tracking-widest2 text-[10px] text-ember">
+                  Full entry
+                </span>
+                <button
+                  onClick={onClose}
+                  className="font-mono uppercase tracking-widest2 text-[10px] text-ink-mute hover:text-ember ink-link"
+                  aria-label="Close"
+                >
+                  Close ✕
+                </button>
               </div>
-            </div>
 
-            <p className="text-[15px] text-white/70 leading-relaxed mb-6">
-              {experience.description}
-            </p>
+              <div className="px-8 py-8">
+                <h3 className="font-display text-[36px] leading-[1.05] text-ink">
+                  {experience.role}
+                </h3>
+                <p className="font-display italic text-[20px] text-ember mt-1">
+                  {experience.organization}
+                </p>
 
-            <ul className="space-y-3">
-              {experience.bullets.map((bullet, i) => (
-                <li key={i} className="flex gap-3 text-[14px] text-white/70 leading-relaxed">
-                  <span className="mt-[6px] w-1 h-1 min-w-[4px] rounded-full bg-emerald flex-shrink-0" />
-                  {bullet}
-                </li>
-              ))}
-            </ul>
+                <div className="mt-5 flex flex-wrap gap-x-8 gap-y-1 font-mono text-[11px] text-ink-mute">
+                  <span><span className="text-ink-faint mr-2">Period</span> <span className="num">{experience.period}</span></span>
+                  <span><span className="text-ink-faint mr-2">Location</span> {experience.location}</span>
+                </div>
 
-            <p className="text-[12px] text-white/40 mt-8 pt-4 border-t border-white/10">
-              Press ESC to close
-            </p>
+                <p className="mt-6 font-serif text-[17px] leading-relaxed text-ink/80">
+                  {experience.description}
+                </p>
+
+                <ul className="mt-6 space-y-3">
+                  {experience.bullets.map((bullet, i) => (
+                    <li key={i} className="grid grid-cols-[24px_1fr] gap-2 text-[15px] leading-relaxed text-ink/75">
+                      <span className="font-mono text-[10px] text-ember pt-1.5">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="px-8 py-4 rule-t font-mono text-[10px] uppercase tracking-widest2 text-ink-faint">
+                Press ESC to close
+              </div>
             </div>
           </motion.div>
         </>

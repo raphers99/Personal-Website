@@ -1,12 +1,11 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { ScrollProgress } from '@/components/ScrollProgress';
-import { FloatingElements } from '@/components/FloatingElements';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://josephajax.com'),
-  title: 'Joseph Raphael',
-  description: 'Finance focused. UK & US citizen.',
+  title: 'Joseph Raphael — Tulane / Economics & AI',
+  description: 'Finance focused. UK & US citizen. Student at Tulane University.',
   icons: {
     icon: '/favicon.svg',
   },
@@ -15,14 +14,6 @@ export const metadata: Metadata = {
     description: 'Finance focused. UK & US citizen.',
     type: 'website',
     url: 'https://josephajax.com',
-    images: [
-      {
-        url: '/api/og?title=Joseph%20Raphael&description=Finance%20focused.%20UK%20%26%20US%20citizen.',
-        width: 1200,
-        height: 630,
-        alt: 'Joseph Raphael',
-      },
-    ],
   },
 };
 
@@ -35,7 +26,6 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ScrollProgress />
-        <FloatingElements />
         {children}
       </body>
     </html>

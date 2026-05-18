@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
 
 export function ScrollProgress() {
   const [progress, setProgress] = useState(0);
@@ -14,16 +13,24 @@ export function ScrollProgress() {
       setProgress(scrolled);
     };
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <motion.div
-      className="fixed top-0 left-0 h-1 bg-gradient-to-r from-emerald to-emerald/40 z-50"
-      style={{ width: `${progress}%` }}
-      initial={{ width: 0 }}
-      transition={{ type: 'tween', ease: 'easeOut' }}
-    />
+    <div
+      className="fixed top-0 left-0 right-0 h-px z-50 pointer-events-none"
+      style={{ background: 'rgba(245, 241, 232, 0.06)' }}
+    >
+      <div
+        className="h-full"
+        style={{
+          width: `${progress}%`,
+          background: 'var(--ember)',
+          transition: 'width 80ms linear',
+        }}
+      />
+    </div>
   );
 }

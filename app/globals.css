@@ -1,28 +1,92 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --paper: #0E0E0C;
+  --paper-panel: #16140F;
+  --ink: #F5F1E8;
+  --ink-mute: #9C968A;
+  --ink-faint: #5A564E;
+  --ember: #E07B47;
+  --rule: rgba(245, 241, 232, 0.12);
+}
+
 html {
   scroll-behavior: smooth;
+  background: var(--paper);
 }
 
 body {
-  @apply bg-navy font-sans antialiased;
-  color: #E6F1FF;
-  background-image:
-    radial-gradient(circle at 20% 30%, rgba(100, 255, 218, 0.04), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(124, 131, 253, 0.04), transparent 40%);
-  background-attachment: fixed;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Newsreader', Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'ss01', 'ss02';
+  position: relative;
+}
+
+/* Subtle paper grain — fixed, behind everything */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  mix-blend-mode: overlay;
+}
+
+/* Faint vignette */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.45) 100%);
+}
+
+main, header, footer { position: relative; z-index: 1; }
+
+::selection {
+  background: rgba(224, 123, 71, 0.35);
+  color: var(--ink);
 }
 
 @layer utilities {
-  .section-padding {
-    @apply py-20 px-6;
+  .font-display { font-family: 'Instrument Serif', 'Newsreader', Georgia, serif; }
+  .font-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  .font-serif { font-family: 'Newsreader', Georgia, serif; }
+
+  .label {
+    @apply font-mono uppercase text-[10.5px] text-ink-mute;
+    letter-spacing: 0.22em;
   }
 
-  .container-max {
-    @apply max-w-container mx-auto;
+  .rule-t { border-top: 1px solid var(--rule); }
+  .rule-b { border-bottom: 1px solid var(--rule); }
+  .rule-l { border-left: 1px solid var(--rule); }
+
+  .ink-link {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .ink-link:hover {
+    background-size: 100% 1px;
+  }
+
+  .num {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum';
   }
 }

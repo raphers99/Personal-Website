@@ -9,32 +9,40 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: {
-          DEFAULT: '#0A192F',
-          light: '#112240',
-          dark: '#020C1B',
+        paper: {
+          DEFAULT: '#0E0E0C',
+          panel: '#16140F',
+          edge: '#1F1C16',
         },
-        accent: {
-          DEFAULT: '#64FFDA',
-          light: '#9BFFE8',
-          dark: '#4DD9B5',
+        ink: {
+          DEFAULT: '#F5F1E8',
+          mute: '#9C968A',
+          faint: '#5A564E',
         },
-        secondary: {
-          DEFAULT: '#7C83FD',
-          light: '#9DA3FE',
-          dark: '#5B63DD',
+        ember: {
+          DEFAULT: '#E07B47',
+          dim: '#A85A30',
         },
-        emerald: '#64FFDA',
-        offwhite: '#0A192F',
-        textPrimary: '#E6F1FF',
-        textMuted: '#8892B0',
+        rule: 'rgba(245, 241, 232, 0.12)',
+        // Legacy aliases to avoid breaking lingering refs
+        navy: { DEFAULT: '#0E0E0C', light: '#16140F', dark: '#0A0907' },
+        emerald: '#E07B47',
+        accent: { DEFAULT: '#E07B47', light: '#EE9468', dark: '#A85A30' },
+        textPrimary: '#F5F1E8',
+        textMuted: '#9C968A',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Playfair Display', 'Georgia', 'serif'],
+        serif: ['"Newsreader"', 'Georgia', 'serif'],
+        display: ['"Instrument Serif"', '"Newsreader"', 'Georgia', 'serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+        sans: ['"Newsreader"', 'Georgia', 'serif'],
       },
       maxWidth: {
-        container: '1100px',
+        container: '1200px',
+        prose: '640px',
+      },
+      letterSpacing: {
+        widest2: '0.22em',
       },
     },
   },

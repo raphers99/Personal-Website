@@ -1,7 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { experiences } from '@/data/experience';
 import { ExperienceModal } from './ExperienceModal';
@@ -9,58 +8,79 @@ import { ExperienceModal } from './ExperienceModal';
 export default function Experience() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
-  const [selectedExperience, setSelectedExperience] = useState<typeof experiences[0] | null>(null);
+  const [selected, setSelected] = useState<typeof experiences[0] | null>(null);
 
   return (
-    <section id="experience" className="py-16 px-6 bg-navy">
+    <section id="experience" className="relative py-28 px-6 sm:px-10 rule-t">
       <div className="max-w-container mx-auto">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-        >
-          <ExperienceModal experience={selectedExperience} onClose={() => setSelectedExperience(null)} />
-          <p className="text-[12px] font-semibold tracking-widest uppercase text-emerald/70 mb-4">
-            Experience
-          </p>
-          <h2 className="font-display text-[36px] sm:text-[44px] font-bold text-white mb-10 leading-tight">
-            Work History
-          </h2>
+        <ExperienceModal experience={selected} onClose={() => setSelected(null)} />
 
-          <div className="space-y-0 divide-y divide-emerald/10">
-            {experiences.map((exp, i) => (
-              <motion.button
+        <div className="flex items-baseline justify-between mb-12">
+          <span className="font-mono uppercase tracking-widest2 text-[10.5px] text-ember">
+            § 02 · Record
+          </span>
+          <span className="font-mono uppercase tracking-widest2 text-[10.5px] text-ink-faint">
+            Chronological · descending
+          </span>
+        </div>
+
+        <h2 className="font-display text-[44px] sm:text-[56px] leading-[1.02] tracking-tight text-ink mb-14">
+          The <span className="italic">ledger</span>
+          <span className="text-ember">.</span>
+        </h2>
+
+        <ol ref={ref} className="space-y-0">
+          {experiences.map((exp, i) => {
+            const num = String(i + 1).padStart(2, '0');
+            return (
+              <motion.li
                 key={i}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 14 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.45, delay: i * 0.1, ease: 'easeOut' }}
-                onClick={() => setSelectedExperience(exp)}
-                className="w-full py-6 grid sm:grid-cols-[200px_1fr] gap-4 sm:gap-8 hover:bg-white/5 transition-colors duration-200 text-left group"
+                transition={{ duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
               >
-                {/* Left column */}
-                <div>
-                  <p className="text-[14px] font-semibold text-white/50 tabular-nums">
-                    {exp.period}
-                  </p>
-                  <p className="text-[13px] text-white/40 mt-1">{exp.location}</p>
-                </div>
+                <button
+                  type="button"
+                  onClick={() => setSelected(exp)}
+                  className="group w-full text-left rule-t py-8 grid grid-cols-12 gap-4 sm:gap-8 hover:bg-paper-panel/40 transition-colors px-2 sm:px-4 -mx-2 sm:-mx-4"
+                >
+                  {/* Number */}
+                  <div className="col-span-2 sm:col-span-1">
+                    <span className="font-mono text-[11px] text-ember">{num}</span>
+                  </div>
 
-                {/* Right column */}
-                <div>
-                  <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1 mb-1">
-                    <h3 className="text-[18px] font-semibold text-white group-hover:text-emerald transition-colors">{exp.role}</h3>
-                    <span className="text-[14px] text-white/60">— {exp.organization}</span>
+                  {/* Period & location */}
+                  <div className="col-span-10 sm:col-span-3">
+                    <p className="font-mono text-[12px] text-ink-mute num tracking-tight">
+                      {exp.period}
+                    </p>
+                    <p className="font-mono text-[10px] text-ink-faint mt-1 uppercase tracking-widest2">
+                      {exp.location}
+                    </p>
                   </div>
-                  <p className="text-[14px] text-white/65 mb-3">{exp.description}</p>
-                  <div className="flex items-center gap-2 text-[12px] text-emerald/70 group-hover:text-emerald transition-colors">
-                    Click to view details →
+
+                  {/* Role & description */}
+                  <div className="col-span-12 sm:col-span-8">
+                    <h3 className="font-display text-[28px] sm:text-[32px] leading-[1.1] text-ink group-hover:text-ember transition-colors">
+                      {exp.role}
+                      <span className="text-ink-mute">  —  </span>
+                      <span className="italic text-ink-mute group-hover:text-ink transition-colors">
+                        {exp.organization}
+                      </span>
+                    </h3>
+                    <p className="mt-3 text-[15px] leading-relaxed text-ink/65 max-w-prose">
+                      {exp.description}
+                    </p>
+                    <p className="mt-4 font-mono uppercase tracking-widest2 text-[10px] text-ink-faint group-hover:text-ember transition-colors">
+                      Read full entry  →
+                    </p>
                   </div>
-                </div>
-              </motion.button>
-            ))}
-          </div>
-        </motion.div>
+                </button>
+              </motion.li>
+            );
+          })}
+          <li className="rule-t" />
+        </ol>
       </div>
     </section>
   );
